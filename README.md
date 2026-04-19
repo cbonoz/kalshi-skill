@@ -24,6 +24,32 @@ Openclaw Kalshi skill for programatically pulling markets and managing your acco
 This project uses <a href="https://docs.astral.sh/uv/">uv</a> for dependency management and runtime.
 
 
+
+### Usage
+
+After installing dependencies and setting up your .env, you can use the CLI to interact with your Kalshi account:
+
+```sh
+# Show your portfolio balance
+uv run kalshi_cli.py balance
+
+# List open positions
+uv run kalshi_cli.py positions
+
+# List open orders
+uv run kalshi_cli.py orders
+
+# Show details for a specific market
+uv run kalshi_cli.py market KXBTCMAXMON-BTC-26APR30-7750000
+
+# List all markets (limit 10 by default)
+uv run kalshi_cli.py markets --limit 5
+```
+
+You can also import and use the KalshiMarketClient class directly in your own Python scripts.
+
+---
+
 ### Setup
 
 .env

@@ -12,32 +12,13 @@ import json
 load_dotenv()
 
 
+
 class KalshiMarketClient:
     """Wrapper around pykalshi.KalshiClient with custom business logic"""
 
     def __init__(self):
         """Initialize the Kalshi client"""
         self.client = KalshiClient()
-
-    # ==================== Market Browsing ====================
-
-    def get_all_markets(self, limit: int = 100, status: Optional[str] = None) -> List[Dict[str, Any]]:
-        """
-        Fetch all markets with optional filtering
-
-        Args:
-            limit: Number of markets to fetch
-            status: Optional status filter (OPEN, CLOSED, etc.)
-
-        Returns:
-            List of market dictionaries
-        """
-        try:
-            markets = self.client.get_markets(limit=limit)
-            return [self._market_to_dict(m) for m in markets]
-        except Exception as e:
-            print(f"❌ Error fetching markets: {e}")
-            return []
 
     def get_bitcoin_markets(self, limit: int = 50) -> List[Dict[str, Any]]:
         """Get Bitcoin-related markets"""
