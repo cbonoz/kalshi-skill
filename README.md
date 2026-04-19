@@ -21,6 +21,8 @@ This project provides a Python-based skill for programmatically interacting with
 With this skill, users can build automated trading strategies, monitor market conditions, and manage their Kalshi accounts directly from code.
 Openclaw Kalshi skill for programatically pulling markets and managing your account provided a read/write key.
 
+This project uses <a href="https://docs.astral.sh/uv/">uv</a> for dependency management and runtime.
+
 
 ### Setup
 
@@ -31,6 +33,8 @@ KALSHI_PRIVATE_KEY_PATH= # ex: personal.key (text file)
 ```
 
 uv sync
+
+uv run
 
 ### Registering with Openclaw
 
