@@ -62,9 +62,11 @@ uv sync
 
 uv run
 
-### Registering with Openclaw
+### Registering with local Openclaw
 
-Prompt: `Can we register the skill kalshi-skill
+Pull locally into workspace/skills.
+Add .env file in root folder with your information.
+Prompt: `Can we register the skill kalshi-skill for use? Can you try checking my balance?`
 
 ### Additional links
 
