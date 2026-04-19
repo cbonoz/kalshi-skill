@@ -1,5 +1,5 @@
 
-![Test Output](test_output.png)
+![Test Output](./images/test_output.png)
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
