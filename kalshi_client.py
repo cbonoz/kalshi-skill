@@ -16,6 +16,23 @@ load_dotenv()
 class KalshiMarketClient:
     """Wrapper around pykalshi.KalshiClient with custom business logic"""
 
+    def get_all_markets(self, limit: int = 50, fetch_all: bool = False) -> List[Dict[str, Any]]:
+        """
+        Get all markets, optionally limited by count or fetch all.
+
+        Args:
+            limit: Number of results to return (ignored if fetch_all=True)
+            fetch_all: If True, fetch all markets (no limit)
+
+        Returns:
+            List of all markets
+        """
+        try:
+            markets = self.client.get_markets(limit=limit, fetch_all=fetch_all)
+            return [self._market_to_dict(m) for m in markets]
+        except Exception as e:
+            print(f"❌ Error fetching all markets: {e}")
+            return []
     def __init__(self):
         """Initialize the Kalshi client"""
         self.client = KalshiClient()
